@@ -253,7 +253,7 @@
         <h1>SocialStats API Documentation</h1>
         <p>SocialStats exposes a social-network-agnostic model for profile, post, and comment/reply metrics. Each social network has different labels and available KPIs, but integrations should consume the normalized fields wherever possible.</p>
         <div class="meta-grid">
-          <div class="meta-card"><span>Base URL</span><strong><code>https://socialstats.axiombilling.com</code></strong></div>
+          <div class="meta-card"><span>Base URL</span><strong><code>https://PrivateBaseURL.com</code></strong></div>
           <div class="meta-card"><span>Protocol</span><strong>HTTPS</strong></div>
           <div class="meta-card"><span>Authentication</span><strong><code>X-API-Key</code> header</strong></div>
           <div class="meta-card"><span>Contract</span><strong>Profile, posts, comments, replies</strong></div>
@@ -279,6 +279,7 @@
       <section id="auth">
         <h2>Authentication</h2>
         <p>Every request must include your assigned API key in the <code>X-API-Key</code> header.</p>
+        <p>The production base URL is provided privately during customer onboarding or subscription activation. Public examples use <code>https://PrivateBaseURL.com</code> as a placeholder.</p>
         <pre><code>X-API-Key: &lt;your-api-key&gt;</code></pre>
         <div class="callout">Do not place API keys in frontend JavaScript, public repositories, logs, or screenshots. Treat the key as a backend/server-side secret.</div>
       </section>
@@ -289,7 +290,7 @@
         <pre><code>GET /health</code></pre>
         <h3>cURL</h3>
         <pre><code>curl -H "X-API-Key: &lt;your-api-key&gt;" \
-  https://socialstats.axiombilling.com/health</code></pre>
+  https://PrivateBaseURL.com/health</code></pre>
         <h3>Response</h3>
         <pre><code>{
   "status": "ok",
@@ -324,7 +325,7 @@ X-API-Key: &lt;your-api-key&gt;</code></pre>
           </tbody>
         </table>
         <h3>cURL</h3>
-        <pre><code>curl -X POST https://socialstats.axiombilling.com/scrape \
+        <pre><code>curl -X POST https://PrivateBaseURL.com/scrape \
   -H "Content-Type: application/json" \
   -H "X-API-Key: &lt;your-api-key&gt;" \
   -d '{
@@ -424,7 +425,7 @@ X-API-Key: &lt;your-api-key&gt;</code></pre>
           </tbody>
         </table>
         <h3>cURL</h3>
-        <pre><code>curl -X POST https://socialstats.axiombilling.com/facebook/comments \
+        <pre><code>curl -X POST https://PrivateBaseURL.com/facebook/comments \
   -H "Content-Type: application/json" \
   -H "X-API-Key: &lt;your-api-key&gt;" \
   -d '{
